@@ -2,7 +2,7 @@ import re
 def validate_data(data, pattern):
     return re.match(pattern, data)
 
-
+#These are the data examples
 data_samples = {
     "email": "user@example.com",
     "url": "https://www.example.com",
@@ -11,7 +11,7 @@ data_samples = {
     "html tag": "<p>"
 }
 
-
+#Regular expressions to be validated
 patterns = {
     "email": r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$",
     "url": r"^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(\/[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=]*)?$",
@@ -21,12 +21,13 @@ patterns = {
 
 }
 
-
+#the loop through the data samples and the regular expressions
 results = {}
 for data_type, sample_data in data_samples.items():
     pattern = patterns[data_type]
     match = validate_data(sample_data, pattern)
     results[data_type] = "valid" if match else "invalid"
 
+#printing the results
 for data_type, result in results.items():
     print(f"{data_type.capitalize()} validation: {result}")
