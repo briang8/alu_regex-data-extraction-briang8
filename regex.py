@@ -7,7 +7,8 @@ data_samples = {
     "email": "user@example.com",
     "url": "https://www.example.com",
     "phone": "(123) 456-7890",
-    "hashtag": "#example"
+    "hashtag": "#example",
+    "html tag": "<p>"
 }
 
 
@@ -15,7 +16,9 @@ patterns = {
     "email": r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$",
     "url": r"^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(\/[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=]*)?$",
     "phone": r"^(\(\d{3}\)\s?|\d{3}[-.\s]?)\d{3}[-.\s]?\d{4}$",
-    "hashtag": r"#([a-zA-Z0-9_]+)"
+    "hashtag": r"#([a-zA-Z0-9_]+)",
+    "html tag": r"^<\/?p>$"
+
 }
 
 
@@ -27,4 +30,3 @@ for data_type, sample_data in data_samples.items():
 
 for data_type, result in results.items():
     print(f"{data_type.capitalize()} validation: {result}")
-    
